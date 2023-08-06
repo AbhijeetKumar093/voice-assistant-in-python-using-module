@@ -9,31 +9,31 @@ import webbrowser
 import openai
 import random
 
-# chatStr = ""
-#
-#
-# def chat(command):
-#     global chatStr
-#     print(chatStr)
-#     openai.api_key = "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"
-#     chatStr = f"you {command}\n alexa: "
-#
-#     response = openai.Completion.create(
-#         model="text-davinci-003",
-#         prompt=chatStr,
-#         temperature=0.7,
-#         max_token=256,
-#         top_p=1,
-#         frequenncy_penality=0,
-#         presence_penalty=0,
-#     )
-#     # todo: Wrap this inside of a try catch block
-#     talk(response["choices"][0]["text"])
-#     chatStr += f"{response['choices'][0]['text']}\n"
-#     return response["choices"][0]["text"]
-#
-#     with open(f"Openai/{''.join(prompt_split('alexa')[1:]).strip()}.txt", "w") as f:
-#         f.write(text)
+chatStr = ""
+
+
+def chat(command):
+    global chatStr
+    print(chatStr)
+    openai.api_key = "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"
+    chatStr = f"you {command}\n alexa: "
+
+    response = openai.Completion.create(
+        model="text-davinci-003",
+        prompt=chatStr,
+        temperature=0.7,
+        max_token=256,
+        top_p=1,
+        frequenncy_penality=0,
+        presence_penalty=0,
+    )
+    # todo: Wrap this inside of a try catch block
+    talk(response["choices"][0]["text"])
+    chatStr += f"{response['choices'][0]['text']}\n"
+    return response["choices"][0]["text"]
+
+    with open(f"Openai/{''.join(prompt_split('alexa')[1:]).strip()}.txt", "w") as f:
+        f.write(text)
 
 
 def ai(prompt):
